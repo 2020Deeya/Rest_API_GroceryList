@@ -14,7 +14,8 @@ public class Item {
     private int id;
 
     private String name;
-    private int quantity;
+    private int price;
+    private float gst;
 
     public int getId() {
         return id;
@@ -22,6 +23,14 @@ public class Item {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public float getgst() {
+        return this.gst;
+    }
+
+    public void setGst(float gst) {
+        this.gst = gst;
     }
 
     public String getName() {
@@ -32,11 +41,11 @@ public class Item {
         this.name = name;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getPrice() {
+        return price;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -19,6 +20,12 @@ public class GroceryListController {
         List<Item> items = new ArrayList<>();
         groceryListRepository.findAll().forEach(items :: add);
         return items;
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping(path = "/items/{id}")
+    public Optional<Item> getNoteById(@PathVariable(value = "id") int id){
+        return groceryListRepository.findById(id);
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
